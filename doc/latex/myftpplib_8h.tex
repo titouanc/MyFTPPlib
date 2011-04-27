@@ -1,0 +1,203 @@
+\hypertarget{myftpplib_8h}{
+\section{Référence du fichier myftpplib.h}
+\label{myftpplib_8h}\index{myftpplib.h@{myftpplib.h}}
+}
+{\ttfamily \#include $<$pthread.h$>$}\par
+{\ttfamily \#include $<$unistd.h$>$}\par
+{\ttfamily \#include \char`\"{}mypplib.h\char`\"{}}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+Graphe des dépendances par inclusion de myftpplib.h:Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{myftpplib_8h_a24ffd5bbbfb088bb06cf635d2f04b74a}{
+\#define {\bfseries MYFTPP\_\-A}(x, y)~MYFTPP\_\-getAnalogState(x, y)}
+\label{myftpplib_8h_a24ffd5bbbfb088bb06cf635d2f04b74a}
+
+\item 
+\hypertarget{myftpplib_8h_a8ed8c9a184207113202dddc7e8b9de85}{
+\#define {\bfseries MYFTPP\_\-D}()~MYFTPP\_\-getDigitalState()}
+\label{myftpplib_8h_a8ed8c9a184207113202dddc7e8b9de85}
+
+\item 
+\hypertarget{myftpplib_8h_ad4b4d07b00452742ba8d0a7e248b6c22}{
+\#define {\bfseries MYFTPP\_\-FPS}~30}
+\label{myftpplib_8h_ad4b4d07b00452742ba8d0a7e248b6c22}
+
+\item 
+\#define \hyperlink{myftpplib_8h_aa4d936d9990c94602c0ead09e07c6bef}{MYFTPP\_\-init}()~MYFTPP\_\-initWithSocket(MYPP\_\-DEFPORT)
+\item 
+\hypertarget{myftpplib_8h_a1b59ee74f16831499a282bcb99c5fcaa}{
+\#define {\bfseries MYFTPP\_\-M}(s)~MYFTPP\_\-setOutState(s)}
+\label{myftpplib_8h_a1b59ee74f16831499a282bcb99c5fcaa}
+
+\item 
+\hypertarget{myftpplib_8h_ab1654de20e9b51b693ce7a25ab82dead}{
+\#define {\bfseries MYFTPP\_\-M\_\-CCW}~3}
+\label{myftpplib_8h_ab1654de20e9b51b693ce7a25ab82dead}
+
+\item 
+\hypertarget{myftpplib_8h_a7ce1d05ed19434aac6aa48f68bb32cec}{
+\#define {\bfseries MYFTPP\_\-M\_\-CW}~1}
+\label{myftpplib_8h_a7ce1d05ed19434aac6aa48f68bb32cec}
+
+\item 
+\hypertarget{myftpplib_8h_a4f1b2e457890eb06c08e9e2019f5d5df}{
+\#define {\bfseries MYFTPP\_\-M\_\-OFF}~0}
+\label{myftpplib_8h_a4f1b2e457890eb06c08e9e2019f5d5df}
+
+\item 
+\hypertarget{myftpplib_8h_a2250c71fa0fb3d3e551ef8b70bea6c84}{
+\#define {\bfseries MYFTPP\_\-MM}(m1, m2, m3, m4)~MYFTPP\_\-setMotors(m1, m2, m3, m4)}
+\label{myftpplib_8h_a2250c71fa0fb3d3e551ef8b70bea6c84}
+
+\item 
+\hypertarget{myftpplib_8h_abe6b76ce34d063b7f73b17c13c6f8b4c}{
+\#define {\bfseries MYFTPP\_\-PIN\_\-ALWAYSON}~MYFTPP\_\-PIN\_\-TRIGGERX$|$MYFTPP\_\-PIN\_\-TRIGGERY}
+\label{myftpplib_8h_abe6b76ce34d063b7f73b17c13c6f8b4c}
+
+\item 
+\hypertarget{myftpplib_8h_a2f5d7918548c5e5a9d581f6d9e8d8535}{
+\#define {\bfseries MYFTPP\_\-PIN\_\-CLOCK}~MYPP\_\-PIN\_\-D3}
+\label{myftpplib_8h_a2f5d7918548c5e5a9d581f6d9e8d8535}
+
+\item 
+\hypertarget{myftpplib_8h_acdab1c4d98f9a59bde2a805cdadd4707}{
+\#define {\bfseries MYFTPP\_\-PIN\_\-DATAOUT}~MYPP\_\-PIN\_\-D2}
+\label{myftpplib_8h_acdab1c4d98f9a59bde2a805cdadd4707}
+
+\item 
+\hypertarget{myftpplib_8h_ac163dfb7d35f51da31d9a4835030f47d}{
+\#define {\bfseries MYFTPP\_\-PIN\_\-LOADIN}~MYPP\_\-PIN\_\-D1}
+\label{myftpplib_8h_ac163dfb7d35f51da31d9a4835030f47d}
+
+\item 
+\hypertarget{myftpplib_8h_a5700a10f7eb3c498ec79630e93187102}{
+\#define {\bfseries MYFTPP\_\-PIN\_\-LOADOUT}~MYPP\_\-PIN\_\-D0}
+\label{myftpplib_8h_a5700a10f7eb3c498ec79630e93187102}
+
+\item 
+\hypertarget{myftpplib_8h_acbd0fd582e90a3e87052a0b675e80796}{
+\#define {\bfseries MYFTPP\_\-PIN\_\-TRIGGERX}~MYPP\_\-PIN\_\-D4}
+\label{myftpplib_8h_acbd0fd582e90a3e87052a0b675e80796}
+
+\item 
+\hypertarget{myftpplib_8h_a1092555fcc08c9eb668b250c6c1b0ef0}{
+\#define {\bfseries MYFTPP\_\-PIN\_\-TRIGGERY}~MYPP\_\-PIN\_\-D5}
+\label{myftpplib_8h_a1092555fcc08c9eb668b250c6c1b0ef0}
+
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{myftpplib_8h_a7dc8b4a2f7b854b24b6ff9de7b998c4c}{MYFTPP\_\-exit} ()
+\item 
+MYPP\_\-Bool \hyperlink{myftpplib_8h_a4f5485d9939534c50debe393eb35df13}{MYFTPP\_\-getAnalogState} (unsigned char $\ast$x, unsigned char $\ast$y)
+\item 
+unsigned char \hyperlink{myftpplib_8h_ade0781d94440c780dcaf9daffa261645}{MYFTPP\_\-getDigitalState} ()
+\item 
+int \hyperlink{myftpplib_8h_af2dd9c7b8a1b204127ff3c199fa0f1bf}{MYFTPP\_\-initWithSocket} (const char $\ast$socket)
+\item 
+MYPP\_\-Bool \hyperlink{myftpplib_8h_a5b15e7317e563433350d2bf1c4f7f8fa}{MYFTPP\_\-runIOThread} ()
+\item 
+MYPP\_\-Bool \hyperlink{myftpplib_8h_acb9fb1d91de70ea2815e4a44dad25958}{MYFTPP\_\-setMotors} (char m1, char m2, char m3, char m4)
+\item 
+MYPP\_\-Bool \hyperlink{myftpplib_8h_a2f4d634a489bc2c5f8e362dec9cb9e91}{MYFTPP\_\-setOutState} (unsigned char state)
+\item 
+MYPP\_\-Bool \hyperlink{myftpplib_8h_a37dd1b46678796f136dc409b8f4b3704}{MYFTPP\_\-stopIOThread} ()
+\item 
+MYPP\_\-Bool \hyperlink{myftpplib_8h_aca9dd73c91c0595978fccf92688d0586}{MYFTPP\_\-waitIOThread} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+
+
+\subsection{Documentation des macros}
+\hypertarget{myftpplib_8h_aa4d936d9990c94602c0ead09e07c6bef}{
+\index{myftpplib.h@{myftpplib.h}!MYFTPP\_\-init@{MYFTPP\_\-init}}
+\index{MYFTPP\_\-init@{MYFTPP\_\-init}!myftpplib.h@{myftpplib.h}}
+\subsubsection[{MYFTPP\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}\#define MYFTPP\_\-init()~MYFTPP\_\-initWithSocket(MYPP\_\-DEFPORT)}}
+\label{myftpplib_8h_aa4d936d9990c94602c0ead09e07c6bef}
+Initialise la bibliotheque avec la socket par defaut de MYPP \begin{DoxyReturn}{Renvoie}
+0 si l'initialisation a reussi ou un autre nombre en cas d'echec 
+\end{DoxyReturn}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{myftpplib_8h_a7dc8b4a2f7b854b24b6ff9de7b998c4c}{
+\index{myftpplib.h@{myftpplib.h}!MYFTPP\_\-exit@{MYFTPP\_\-exit}}
+\index{MYFTPP\_\-exit@{MYFTPP\_\-exit}!myftpplib.h@{myftpplib.h}}
+\subsubsection[{MYFTPP\_\-exit}]{\setlength{\rightskip}{0pt plus 5cm}int MYFTPP\_\-exit ()}}
+\label{myftpplib_8h_a7dc8b4a2f7b854b24b6ff9de7b998c4c}
+Ferme l'interface et decharge la bibliotheque \begin{DoxyReturn}{Renvoie}
+0 en cas de reussite ou un autre nombre en cas d'echec 
+\end{DoxyReturn}
+\hypertarget{myftpplib_8h_a4f5485d9939534c50debe393eb35df13}{
+\index{myftpplib.h@{myftpplib.h}!MYFTPP\_\-getAnalogState@{MYFTPP\_\-getAnalogState}}
+\index{MYFTPP\_\-getAnalogState@{MYFTPP\_\-getAnalogState}!myftpplib.h@{myftpplib.h}}
+\subsubsection[{MYFTPP\_\-getAnalogState}]{\setlength{\rightskip}{0pt plus 5cm}MYPP\_\-Bool MYFTPP\_\-getAnalogState (unsigned char $\ast$ {\em x}, \/  unsigned char $\ast$ {\em y})}}
+\label{myftpplib_8h_a4f5485d9939534c50debe393eb35df13}
+Recupere les valeurs des entrees analogues dans le tampon 
+\begin{DoxyParams}{Paramètres}
+\item[\mbox{$\rightarrow$} {\em x}]l'etat de l'entree analogue X \item[\mbox{$\rightarrow$} {\em y}]l'etat de l'entree analogue Y \end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true si l'operation a reussi, false sinon 
+\end{DoxyReturn}
+\hypertarget{myftpplib_8h_ade0781d94440c780dcaf9daffa261645}{
+\index{myftpplib.h@{myftpplib.h}!MYFTPP\_\-getDigitalState@{MYFTPP\_\-getDigitalState}}
+\index{MYFTPP\_\-getDigitalState@{MYFTPP\_\-getDigitalState}!myftpplib.h@{myftpplib.h}}
+\subsubsection[{MYFTPP\_\-getDigitalState}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char MYFTPP\_\-getDigitalState ()}}
+\label{myftpplib_8h_ade0781d94440c780dcaf9daffa261645}
+Recupere les valeurs des entrees binaires dans le tampon \begin{DoxyReturn}{Renvoie}
+L'etat des entrees 
+\end{DoxyReturn}
+\hypertarget{myftpplib_8h_af2dd9c7b8a1b204127ff3c199fa0f1bf}{
+\index{myftpplib.h@{myftpplib.h}!MYFTPP\_\-initWithSocket@{MYFTPP\_\-initWithSocket}}
+\index{MYFTPP\_\-initWithSocket@{MYFTPP\_\-initWithSocket}!myftpplib.h@{myftpplib.h}}
+\subsubsection[{MYFTPP\_\-initWithSocket}]{\setlength{\rightskip}{0pt plus 5cm}int MYFTPP\_\-initWithSocket (const char $\ast$ {\em socket})}}
+\label{myftpplib_8h_af2dd9c7b8a1b204127ff3c199fa0f1bf}
+Initialise la bibliotheque et ouvre l'interface 
+\begin{DoxyParams}{Paramètres}
+\item[\mbox{$\leftarrow$} {\em socket}]La socket a utiliser pour ouvrir l'interface (voir MYPP) \end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si l'initialisation a reussi ou un autre nombre en cas d'echec 
+\end{DoxyReturn}
+\hypertarget{myftpplib_8h_a5b15e7317e563433350d2bf1c4f7f8fa}{
+\index{myftpplib.h@{myftpplib.h}!MYFTPP\_\-runIOThread@{MYFTPP\_\-runIOThread}}
+\index{MYFTPP\_\-runIOThread@{MYFTPP\_\-runIOThread}!myftpplib.h@{myftpplib.h}}
+\subsubsection[{MYFTPP\_\-runIOThread}]{\setlength{\rightskip}{0pt plus 5cm}MYPP\_\-Bool MYFTPP\_\-runIOThread ()}}
+\label{myftpplib_8h_a5b15e7317e563433350d2bf1c4f7f8fa}
+Lance le thread de communication avec l'interface \hypertarget{myftpplib_8h_acb9fb1d91de70ea2815e4a44dad25958}{
+\index{myftpplib.h@{myftpplib.h}!MYFTPP\_\-setMotors@{MYFTPP\_\-setMotors}}
+\index{MYFTPP\_\-setMotors@{MYFTPP\_\-setMotors}!myftpplib.h@{myftpplib.h}}
+\subsubsection[{MYFTPP\_\-setMotors}]{\setlength{\rightskip}{0pt plus 5cm}MYPP\_\-Bool MYFTPP\_\-setMotors (char {\em m1}, \/  char {\em m2}, \/  char {\em m3}, \/  char {\em m4})}}
+\label{myftpplib_8h_acb9fb1d91de70ea2815e4a44dad25958}
+Enregistre l'etat des moteurs dans le tampon a partir de valeurs individuelles NB: Pratique pour utiliser MYFTPP\_\-M\_\-OFF, MYFTPP\_\-M\_\-CW et MYFTPP\_\-M\_\-CCW 
+\begin{DoxyParams}{Paramètres}
+\item[\mbox{$\leftarrow$} {\em m1}]Etat du moteur 1 \item[\mbox{$\leftarrow$} {\em m2}]Etat du moteur 2 \item[\mbox{$\leftarrow$} {\em m3}]Etat du moteur 3 \item[\mbox{$\leftarrow$} {\em m4}]Etat du moteur 4 \end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Comme MYFTPP\_\-setOutState 
+\end{DoxyReturn}
+\hypertarget{myftpplib_8h_a2f4d634a489bc2c5f8e362dec9cb9e91}{
+\index{myftpplib.h@{myftpplib.h}!MYFTPP\_\-setOutState@{MYFTPP\_\-setOutState}}
+\index{MYFTPP\_\-setOutState@{MYFTPP\_\-setOutState}!myftpplib.h@{myftpplib.h}}
+\subsubsection[{MYFTPP\_\-setOutState}]{\setlength{\rightskip}{0pt plus 5cm}MYPP\_\-Bool MYFTPP\_\-setOutState (unsigned char {\em state})}}
+\label{myftpplib_8h_a2f4d634a489bc2c5f8e362dec9cb9e91}
+Enregistre l'etat des moteurs dans le tampon 
+\begin{DoxyParams}{Paramètres}
+\item[\mbox{$\leftarrow$} {\em state}]L'etat des moteurs \end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true si l'operation a reussi, false sinon 
+\end{DoxyReturn}
+\hypertarget{myftpplib_8h_a37dd1b46678796f136dc409b8f4b3704}{
+\index{myftpplib.h@{myftpplib.h}!MYFTPP\_\-stopIOThread@{MYFTPP\_\-stopIOThread}}
+\index{MYFTPP\_\-stopIOThread@{MYFTPP\_\-stopIOThread}!myftpplib.h@{myftpplib.h}}
+\subsubsection[{MYFTPP\_\-stopIOThread}]{\setlength{\rightskip}{0pt plus 5cm}MYPP\_\-Bool MYFTPP\_\-stopIOThread ()}}
+\label{myftpplib_8h_a37dd1b46678796f136dc409b8f4b3704}
+Stoppe le thread de communication avec l'interface \hypertarget{myftpplib_8h_aca9dd73c91c0595978fccf92688d0586}{
+\index{myftpplib.h@{myftpplib.h}!MYFTPP\_\-waitIOThread@{MYFTPP\_\-waitIOThread}}
+\index{MYFTPP\_\-waitIOThread@{MYFTPP\_\-waitIOThread}!myftpplib.h@{myftpplib.h}}
+\subsubsection[{MYFTPP\_\-waitIOThread}]{\setlength{\rightskip}{0pt plus 5cm}MYPP\_\-Bool MYFTPP\_\-waitIOThread ()}}
+\label{myftpplib_8h_aca9dd73c91c0595978fccf92688d0586}
+Attend la fin du thread de communication avec l'interface 

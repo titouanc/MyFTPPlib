@@ -1,0 +1,126 @@
+<!-- This comment will put IE 6, 7 and 8 in quirks mode -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>MYFTPPLIB: Référence du fichier mypplib.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.6.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <img id="MSearchSelect" src="search/search.png"
+             onmouseover="return searchBox.OnSearchSelectShow()"
+             onmouseout="return searchBox.OnSearchSelectHide()"
+             alt=""/>
+        <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+             onfocus="searchBox.OnSearchFieldFocus(true)" 
+             onblur="searchBox.OnSearchFieldFocus(false)" 
+             onkeyup="searchBox.OnSearchFieldChange(event)"/>
+        <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Liste&nbsp;des&nbsp;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Portée&nbsp;globale</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Référence du fichier mypplib.h</h1><code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+<div class="dynheader">
+Graphe des dépendances par inclusion de mypplib.h:</div>
+<div class="dynsection">
+<div class="center"><img src="mypplib_8h__incl.png" border="0" usemap="#mypplib_8h_map" alt=""/></div>
+</div>
+
+<p><a href="mypplib_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Macros</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7142031c2a434de619e6c2e290e45cfc"></a><!-- doxytag: member="mypplib.h::MYPP_close" ref="a7142031c2a434de619e6c2e290e45cfc" args="(port)" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_close</b>(port)&nbsp;&nbsp;&nbsp;0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6367a64cc5911b3624d14b44acd421d8"></a><!-- doxytag: member="mypplib.h::MYPP_DEFPORT" ref="a6367a64cc5911b3624d14b44acd421d8" args="" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_DEFPORT</b>&nbsp;&nbsp;&nbsp;&quot;/dev/parport0&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a8c3bcf1bc1f98c502ccb683de76807"></a><!-- doxytag: member="mypplib.h::MYPP_ERRORBUFFER_LENGTH" ref="a5a8c3bcf1bc1f98c502ccb683de76807" args="" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_ERRORBUFFER_LENGTH</b>&nbsp;&nbsp;&nbsp;1024</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c7116606c3f4a966b7b37920ddedbe7"></a><!-- doxytag: member="mypplib.h::MYPP_getError" ref="a4c7116606c3f4a966b7b37920ddedbe7" args="()" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_getError</b>()&nbsp;&nbsp;&nbsp;MYPP_error_string</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a441f6aa54d15d42200220a91a8876be0"></a><!-- doxytag: member="mypplib.h::MYPP_impulses" ref="a441f6aa54d15d42200220a91a8876be0" args="(port, value, period, ratio_on, repeat)" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_impulses</b>(port, value, period, ratio_on, repeat)&nbsp;&nbsp;&nbsp;fprintf(stdout, &quot;Ecriture de %d a %f\n&quot;, value, ratio_on)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab03fd1073f77ac2ba967d5425770e3f6"></a><!-- doxytag: member="mypplib.h::MYPP_isBusy" ref="ab03fd1073f77ac2ba967d5425770e3f6" args="(port)" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_isBusy</b>(port)&nbsp;&nbsp;&nbsp;(MYPP_Bool) true</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af35750533a6cd28d1f2699f1b41f863c"></a><!-- doxytag: member="mypplib.h::MYPP_open" ref="af35750533a6cd28d1f2699f1b41f863c" args="(socket)" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_open</b>(socket)&nbsp;&nbsp;&nbsp;1</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f5195cd1ec09ac85459a0183c10a72b"></a><!-- doxytag: member="mypplib.h::MYPP_PIN_D0" ref="a7f5195cd1ec09ac85459a0183c10a72b" args="" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_PIN_D0</b>&nbsp;&nbsp;&nbsp;0x01</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6f2c85e3d19fca675f50437d757d8700"></a><!-- doxytag: member="mypplib.h::MYPP_PIN_D1" ref="a6f2c85e3d19fca675f50437d757d8700" args="" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_PIN_D1</b>&nbsp;&nbsp;&nbsp;0x02</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5613d9182449b3b1ebd63e0b4444aaf0"></a><!-- doxytag: member="mypplib.h::MYPP_PIN_D2" ref="a5613d9182449b3b1ebd63e0b4444aaf0" args="" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_PIN_D2</b>&nbsp;&nbsp;&nbsp;0x04</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abb9cfe75c065d24ddc153da841610e50"></a><!-- doxytag: member="mypplib.h::MYPP_PIN_D3" ref="abb9cfe75c065d24ddc153da841610e50" args="" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_PIN_D3</b>&nbsp;&nbsp;&nbsp;0x08</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b0d90b20196a8b2175a7f65b3605ce2"></a><!-- doxytag: member="mypplib.h::MYPP_PIN_D4" ref="a4b0d90b20196a8b2175a7f65b3605ce2" args="" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_PIN_D4</b>&nbsp;&nbsp;&nbsp;0x10</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad831c8b55458a969ea15651f5a913ced"></a><!-- doxytag: member="mypplib.h::MYPP_PIN_D5" ref="ad831c8b55458a969ea15651f5a913ced" args="" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_PIN_D5</b>&nbsp;&nbsp;&nbsp;0x20</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f05704d33c0044219e9c77b016174b9"></a><!-- doxytag: member="mypplib.h::MYPP_PIN_D6" ref="a1f05704d33c0044219e9c77b016174b9" args="" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_PIN_D6</b>&nbsp;&nbsp;&nbsp;0x40</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad59faab7eec1d23b02ac19c3eb279fb9"></a><!-- doxytag: member="mypplib.h::MYPP_PIN_D7" ref="ad59faab7eec1d23b02ac19c3eb279fb9" args="" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_PIN_D7</b>&nbsp;&nbsp;&nbsp;0x80</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf3e6390312be39b7ec2755dfafc9de0"></a><!-- doxytag: member="mypplib.h::MYPP_PIN_DALL" ref="abf3e6390312be39b7ec2755dfafc9de0" args="" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_PIN_DALL</b>&nbsp;&nbsp;&nbsp;0xff</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa114754e618d8ad02e8313f5f8192ca"></a><!-- doxytag: member="mypplib.h::MYPP_PIN_DNONE" ref="aaa114754e618d8ad02e8313f5f8192ca" args="" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_PIN_DNONE</b>&nbsp;&nbsp;&nbsp;0x00</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2fb067ba536425731a1269d1668a8104"></a><!-- doxytag: member="mypplib.h::MYPP_read" ref="a2fb067ba536425731a1269d1668a8104" args="(port)" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_read</b>(port)&nbsp;&nbsp;&nbsp;(1)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55e7c560a497a45f13192d1576ab0b00"></a><!-- doxytag: member="mypplib.h::MYPP_reset" ref="a55e7c560a497a45f13192d1576ab0b00" args="(port)" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_reset</b>(port)&nbsp;&nbsp;&nbsp;MYPP_write(port, MYPP_PIN_DNONE)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae9e9d742e6fa814a1ce40f587aaebe55"></a><!-- doxytag: member="mypplib.h::MYPP_write" ref="ae9e9d742e6fa814a1ce40f587aaebe55" args="(port, value)" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_write</b>(port, value)&nbsp;&nbsp;&nbsp;fprintf(stdout, &quot;Ecriture de %d\n&quot;, value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4eb4cacb151b19e30c7e1390cd5bb4db"></a><!-- doxytag: member="mypplib.h::MYPP_writeDimmed" ref="a4eb4cacb151b19e30c7e1390cd5bb4db" args="(port, value, duration)" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_writeDimmed</b>(port, value, duration)&nbsp;&nbsp;&nbsp;fprintf(stdout, &quot;Ecriture de %d a 50%% pendant %fs\n&quot;, value, duration)</td></tr>
+<tr><td colspan="2"><h2>Définition de type</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab788943a7199fc8f3d089c6e88d4b4fe"></a><!-- doxytag: member="mypplib.h::MYPP_Port" ref="ab788943a7199fc8f3d089c6e88d4b4fe" args="" -->
+typedef int&nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_Port</b></td></tr>
+<tr><td colspan="2"><h2>Énumérations</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><b>MYPP_Bool</b> { <b>false</b> = 0, 
+<b>true</b>
+ }</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Description détaillée</h2>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address style="text-align: right;"><small>Généré le Wed Apr 27 20:32:48 2011 pour MYFTPPLIB par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>
