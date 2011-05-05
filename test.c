@@ -13,16 +13,29 @@ static int my_debug_var_ind = 1;
 #define CCW MYFTPP_M_CCW
 
 int test1(int argc, char **argv){
-  int i;
+  int i,j;
   
   MYFTPP_init();
     
   MYFTPP_setMotors(CW, OFF, OFF, OFF);
   MYFTPP_runIOThread();
+  printf("  ");
+  for (j=1; j<=8; j++)
+		printf(" |  E%d", j);
+  printf("\n");
+  for (j=0; j<50; j++)
+		printf("-");
+  printf("\n");
   for (i=0; i<25; i++){
-      MYFTPP_MM(rand(), rand(), rand(), rand());
       usleep(100000);
-      printf("In: %d\n", MYFTPP_D());
+	  printf("%2d", i);
+	  for (j=1; j<=8; j++){
+		if (MYFTPP_ISON_E(j))
+			printf(" | \033[32mON!\033[0m");
+		else
+			printf(" | \033[31mOFF\033[0m");
+	  }
+	  printf("\n");
   }
   MYFTPP_stopIOThread();
   MYFTPP_exit();
@@ -30,14 +43,12 @@ int test1(int argc, char **argv){
   return 0;
 }
 
+int test2(int argc, char **argv){
+	return 0;
+}
+
 int main(int argc, char **argv){
-  int res;
-  
-  myDebug;
-  res = test1(argc, argv);
-  myDebug;
-  
-  return res;
+  return test1(argc, argv) + test2(argc, argv);
 }
 
 

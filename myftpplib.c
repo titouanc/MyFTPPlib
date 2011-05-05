@@ -92,7 +92,6 @@ void *MYFTPP_IO_threadRoutine(void *data){
         MYFTPP_IO_setMotors();
         MYFTPP_IO_getDigital();
         MYFTPP_IO_getAnalog();
-        usleep(1000000/MYFTPP_FPS);
     }
     return NULL;
 }
@@ -105,23 +104,28 @@ void MYFTPP_IO_setMotors(){
     value = MYFTPP_out_state;
     pthread_mutex_unlock(&MYFTPP_out_mutex);
     
-    MYPP_write(MYFTPP_interface, MYFTPP_PIN_CLOCK|MYFTPP_PIN_LOADOUT|MYFTPP_PIN_ALWAYSON);
+    MYFTPP_write(MYFTPP_PIN_CLOCK|MYFTPP_PIN_LOADOUT|MYFTPP_PIN_ALWAYSON);
     for (i=0; i<8; i++){
         value_to_send = ((value >> i) & 1) * MYFTPP_PIN_DATAOUT;
-        MYPP_write(MYFTPP_interface, value_to_send|MYFTPP_PIN_ALWAYSON);
-        MYPP_write(MYFTPP_interface, MYFTPP_PIN_CLOCK|MYFTPP_PIN_ALWAYSON);
+        MYFTPP_write(value_to_send|MYFTPP_PIN_ALWAYSON);
+		
+        MYFTPP_write(MYFTPP_PIN_CLOCK|MYFTPP_PIN_ALWAYSON);
+		
     }
-    MYPP_write(MYFTPP_interface, MYFTPP_PIN_LOADOUT|MYFTPP_PIN_CLOCK|MYFTPP_PIN_ALWAYSON);
+    MYFTPP_write(MYFTPP_PIN_LOADOUT|MYFTPP_PIN_CLOCK|MYFTPP_PIN_ALWAYSON);
+	
 }
 
 void MYFTPP_IO_getDigital(){
     int i;
     unsigned char res = 0;
     
-    MYPP_write(MYFTPP_interface, MYFTPP_PIN_CLOCK|MYFTPP_PIN_ALWAYSON);
-    MYPP_write(MYFTPP_interface, MYFTPP_PIN_LOADIN|MYFTPP_PIN_ALWAYSON);
+    MYFTPP_write(MYFTPP_PIN_CLOCK|MYFTPP_PIN_ALWAYSON);
+	
+    MYFTPP_write(MYFTPP_PIN_LOADIN|MYFTPP_PIN_ALWAYSON);
     for (i=0; i<8; i++){
-        MYPP_write(MYFTPP_interface, MYFTPP_PIN_CLOCK|MYFTPP_PIN_ALWAYSON);
+        MYFTPP_write(MYFTPP_PIN_CLOCK|MYFTPP_PIN_ALWAYSON);
+		
         if (MYPP_isBusy(MYFTPP_interface))
             res += 1;
         res <<= 1;
@@ -138,9 +142,9 @@ void MYFTPP_IO_getAnalog(){
     int i, j;
 
     for (i=0; i<2; i++){
-        MYPP_write(MYFTPP_interface, MYFTPP_PIN_CLOCK|MYFTPP_PIN_ALWAYSON);
-        MYPP_write(MYFTPP_interface, MYPP_PIN_DNONE|trigger_pins[i]);
-        MYPP_write(MYFTPP_interface, MYFTPP_PIN_CLOCK|MYFTPP_PIN_ALWAYSON);
+        MYFTPP_write(MYFTPP_PIN_CLOCK|MYFTPP_PIN_ALWAYSON);
+        MYFTPP_write(MYPP_PIN_DNONE|trigger_pins[i]);
+        MYFTPP_write(MYFTPP_PIN_CLOCK|MYFTPP_PIN_ALWAYSON);
 
         j = 0;
         while (MYPP_isBusy(MYFTPP_interface) && j<500){

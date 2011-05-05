@@ -21,12 +21,25 @@
 #define MYFTPP_M_CCW 3
 
 #define MYFTPP_FPS 30
+#define MYFTPP_IDLE() usleep(1000000/MYFTPP_FPS)
+#define MYFTPP_write(something) MYFTPP_IDLE(); \
+								MYPP_write(MYFTPP_interface, something)
+
+/*!
+ * Renvoie l'etat d'une entree digitale
+ * \param[in] n le numero de l'entree digitale
+ */
+#define MYFTPP_ISON_E(n) (((MYFTPP_getDigitalState() >> (n-1)) & 1) == 1)
 
 /*!
  * Recupere les valeurs des entrees binaires dans le tampon
  * @return L'etat des entrees
  */
 unsigned char MYFTPP_getDigitalState();
+/*!
+ * Recupere les valeurs des entrees binaires dans le tampon
+ * @return L'etat des entrees
+ */
 #define MYFTPP_D() MYFTPP_getDigitalState() 
 
 /*!
@@ -36,6 +49,12 @@ unsigned char MYFTPP_getDigitalState();
  * @return true si l'operation a reussi, false sinon
  */
 MYPP_Bool MYFTPP_getAnalogState(unsigned char *x, unsigned char *y);
+/*!
+ * Recupere les valeurs des entrees analogues dans le tampon
+ * \param[out] x l'etat de l'entree analogue X
+ * \param[out] y l'etat de l'entree analogue Y
+ * @return true si l'operation a reussi, false sinon
+ */
 #define MYFTPP_A(x, y) MYFTPP_getAnalogState(x, y)
 
 /*!
@@ -44,6 +63,11 @@ MYPP_Bool MYFTPP_getAnalogState(unsigned char *x, unsigned char *y);
  * @return true si l'operation a reussi, false sinon
  */
 MYPP_Bool MYFTPP_setOutState(unsigned char state);
+/*!
+ * Enregistre l'etat des moteurs dans le tampon
+ * \param[in] state L'etat des moteurs 
+ * @return true si l'operation a reussi, false sinon
+ */
 #define MYFTPP_M(s) MYFTPP_setOutState(s)
 
 /*!
@@ -56,6 +80,15 @@ MYPP_Bool MYFTPP_setOutState(unsigned char state);
  * @return Comme MYFTPP_setOutState
  */
 MYPP_Bool MYFTPP_setMotors(char m1, char m2, char m3, char m4);
+/*!
+ * Enregistre l'etat des moteurs dans le tampon a partir de valeurs individuelles
+ * NB: Pratique pour utiliser MYFTPP_M_OFF, MYFTPP_M_CW et MYFTPP_M_CCW
+ * \param[in] m1 Etat du moteur 1
+ * \param[in] m2 Etat du moteur 2
+ * \param[in] m3 Etat du moteur 3
+ * \param[in] m4 Etat du moteur 4
+ * @return Comme MYFTPP_setOutState
+ */
 #define MYFTPP_MM(m1, m2, m3, m4) MYFTPP_setMotors(m1, m2, m3, m4)
 
 /*!

@@ -6,7 +6,7 @@ all : doc lib
 
 lib : myftpplib.a
 
-doc : doxygen.conf
+doc : doxygen.conf myftpplib.h
 	doxygen $<
 
 test : test.exe
