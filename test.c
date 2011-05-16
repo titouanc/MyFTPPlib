@@ -37,6 +37,7 @@ int test1(int argc, char **argv){
 	  }
 	  printf("\n");
   }
+  MYFTPP_setMotors(OFF, OFF, OFF, OFF);
   MYFTPP_stopIOThread();
   MYFTPP_exit();
   
