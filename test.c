@@ -12,12 +12,16 @@ static int my_debug_var_ind = 1;
 #define CW  MYFTPP_M_CW
 #define CCW MYFTPP_M_CCW
 
+#define hputs(str) printf("\033[1m%s\033[0m", str)
+
+//test des ins
 int test1(int argc, char **argv){
   int i,j;
   
+  hputs("Lecture des entrees...\n");
+  
   MYFTPP_init();
-    
-  MYFTPP_setMotors(CW, OFF, OFF, OFF);
+  
   MYFTPP_runIOThread();
   printf("  ");
   for (j=1; j<=8; j++)
@@ -44,12 +48,26 @@ int test1(int argc, char **argv){
   return 0;
 }
 
+//test des outs
 int test2(int argc, char **argv){
+	int i;
+  hputs("Allumage des moteurs...\n");
+	MYFTPP_runIOThread();
+	MYFTPP_MM(MYFTPP_M_CW, MYFTPP_M_CW, MYFTPP_M_CW, MYFTPP_M_CW);
+	for (i=1; i<=5; i++){
+		printf("%d\n", i);
+		usleep(1000000);
+	}
+	MYFTPP_MM(MYFTPP_M_OFF, MYFTPP_M_OFF, MYFTPP_M_OFF, MYFTPP_M_OFF);
+	MYFTPP_stopIOThread();
 	return 0;
 }
 
+
+
 int main(int argc, char **argv){
   return test1(argc, argv) + test2(argc, argv);
+  //return MYFTPP_test_sync(100, stdout);
 }
 
 
