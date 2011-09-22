@@ -9,6 +9,7 @@ lib : myftpplib.a
 doc : doxygen.conf myftpplib.h
 	doxygen $<
 
+#A fixer: utilisation d'ioctl en espace utilisateur plutot qu'en espace noyau
 test : test.exe
 	sudo chown root test.exe
 	sudo chmod +s test.exe
